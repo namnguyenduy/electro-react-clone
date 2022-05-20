@@ -1,4 +1,4 @@
 const logoWebSite = {
-    logo: require('../../assets/images/logo.svg').default,
+    logo: require('../../assets/images/Logo/logo.svg').default,
 }
 export default logoWebSite;
