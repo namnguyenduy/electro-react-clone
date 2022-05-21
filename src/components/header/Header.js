@@ -1,19 +1,19 @@
 import React from "react";
-import clsx from "clsx";
+// import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
-import styles from "./Header.module.scss";
-import logoWebSite from "../../assets/images";
+import styles from "../header/Header.module.scss";
+// import logoWebSite from "../../assets/images";
 import Container from "../container/Container";
+console.log(styles)
 export default function Header() {
   return (
-    <Header className={styles.header}>
+    <div className={styles.header}>
       <Container>
-      {/* top bar */}
-        <div className={styles.topBar}>
-          <Row>
+        {/* top bar */}
+          <Row className={styles.topBar}>
             <Col span={12}>
               {/* header contact box */}
               <div className={styles.headerContactBox}>
@@ -81,10 +81,10 @@ export default function Header() {
               </div>
             </Col>
           </Row>
-        </div>
+       
         <Row></Row>
         {/* <img src={logoWebSite.logo} alt="logo" className={styles.logo} /> */}
       </Container>
-    </Header>
+    </div>
   );
 }
