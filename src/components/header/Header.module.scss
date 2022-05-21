@@ -1,3 +1,52 @@
+@import "../variables/Variables.scss";
 .topBar {
+  border-bottom: 1px solid rgba(51, 62, 72, 0.1);
+}
+.topBarWrapper {
+  font-size: 1.3rem;
   height: 3.7rem;
+  cursor: pointer;
+}
+.storeLocation::before,
+.order::before,
+.customerAccount::before,
+.phone::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background: rgba(51, 62, 72, 0.1);
+}
+.customerAccount,
+.order,
+.storeLocation,
+.phone {
+  position: relative;
+  padding-right: 1.5rem;
+}
+.email {
+  padding-left: 1.5rem;
+}
+.headerIcon {
+  color: $priColor;
+  font-size: 1.4rem;
+  transition: 0.3s ease-in-out;
+}
+.email:hover .headerIcon,
+.phone:hover .headerIcon {
+  color: $priTextColor;
+}
+.customerOr {
+  color: rgba(51, 62, 72, 0.6);
+}
+.language {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+}
+.language img {
+  height: 100%;
 }

@@ -1,0 +1,10 @@
+@import '../variables/Variables.scss';
+html {
+  font-size: 62.5%;
+}
+body {
+  color: $priTextColor;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}

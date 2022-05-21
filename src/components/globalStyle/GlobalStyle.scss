@@ -1,22 +1,17 @@
-@import 'normalize.css';
+@import "normalize.css";
+@import "../typography/Typography.scss";
+@import "../variables/Variables.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
-}
-body {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  text-rendering: optimizeSpeed;
-}
 img {
   display: block;
   max-width: 100%;
   width: 100%;
+  object-fit: cover;
 }
 button,
 input,
@@ -25,6 +20,7 @@ input,
   border: none;
 }
 a[href] {
+  color: $priTextColor;
   text-decoration: none;
 }
 ul {
