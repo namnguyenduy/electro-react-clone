@@ -50,3 +50,20 @@
 .language img {
   height: 100%;
 }
+.languageInner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.titleDropDown {
+  margin: 0;
+  padding-bottom: 1rem;
+  color: $priTextColor;
+  font-size: 2rem;
+}
+.modalDropDown {
+  width: 100%;
+  padding: 0 1.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+}

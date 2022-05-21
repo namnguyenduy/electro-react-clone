@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 // import clsx from "clsx";
 import { Link } from "react-router-dom";
-import { Row, Col } from "antd";
-import { Modal, Button } from "antd";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { AiOutlineUser } from "react-icons/ai";
+import { Row, Col, Modal, Input, Space } from "antd";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaRegHeart,
+} from "react-icons/fa";
+import { AiOutlineUser, AiOutlineShopping } from "react-icons/ai";
+import { BiGitCompare } from "react-icons/bi";
 import styles from "../header/Header.module.scss";
-// import logoWebSite from "../../assets/images";
+import logoWebSite from "../../assets/images";
 import Container from "../container/Container";
-console.log(styles);
+
 export default function Header() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const { Search } = Input;
+  const onSearch = (value) => console.log(value);
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
   return (
     <div className={styles.header}>
       {/* top bar */}
@@ -90,19 +108,110 @@ export default function Header() {
                     </div>
                   </Col>
                   <Col>
-                    <div className={styles.language}>
+                    <div className={styles.language} onClick={showModal}>
                       <img
                         src={`${require("../../assets/images/flags/uk.png")}`}
                         alt="en"
                       />
                     </div>
                   </Col>
+                  <Modal
+                    visible={isModalVisible}
+                    footer={null}
+                    onOk={handleOk}
+                    onCancel={handleCancel}
+                  >
+                    <div className={styles.languageInner}>
+                      <div className={styles.currency}>
+                        <h4 className={styles.titleDropDown}>Currencies</h4>
+                        <select className={styles.modalDropDown}>
+                          <option>CAD</option>
+                          <option>EUR</option>
+                          <option>GBP</option>
+                          <option>USD</option>
+                        </select>
+                      </div>
+                      <div className={styles.translate}>
+                        <h4 className={styles.titleDropDown}>Languages</h4>
+                        <select className={styles.modalDropDown}>
+                          <option>Arabic</option>
+                          <option>English</option>
+                          <option>Spanish</option>
+                          <option>French</option>
+                          <option>Portuguese (Portugal)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </Modal>
                 </Row>
               </div>
             </Col>
           </Row>
         </Container>
         {/* <img src={logoWebSite.logo} alt="logo" className={styles.logo} /> */}
+      </div>
+      {/* header main */}
+      <div className={styles.headerMain}>
+        <Container>
+          <Row>
+            <Col span={8}>
+              {/* logo */}
+              <div className={styles.headerLogo}>
+                <Link to="/" title="Electro">
+                  <img src={logoWebSite.logo} alt="logo" />
+                </Link>
+              </div>
+            </Col>
+            <Col span={8}>
+              {/* search box */}
+              <Search
+                placeholder="Search"
+                onSearch={onSearch}
+                enterButton
+                allowClear
+              />
+            </Col>
+            <Col span={8}>
+              <Row>
+                <Col>
+                  {/* compare */}
+                  <div className={styles.compare}>
+                    <a href="/">
+                      <BiGitCompare />
+                      <span className={styles.number}>
+                        <span className={styles.nItem}>0</span>
+                      </span>
+                    </a>
+                  </div>
+                </Col>
+                <Col>
+                  {/* wishlist */}
+                  <div className={styles.wishlist}>
+                    <Link to={"/"} title="wishlist">
+                      <FaRegHeart />
+                      <span className={styles.number}>
+                        <span className={styles.nItem}>0</span>
+                      </span>
+                    </Link>
+                  </div>
+                </Col>
+                <Col>
+                  <div className={styles.topCart}>
+                    <div className={styles.cart}>
+                      <Link to={"/"} title="cart">
+                        <AiOutlineShopping />
+                        <span className={styles.number}>
+                          <span className={styles.nItem}>0</span>
+                          $0.00
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </div>
   );
