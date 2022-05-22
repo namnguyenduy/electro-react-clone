@@ -1,13 +1,13 @@
 @import "../variables/Variables.scss";
 // top bar
 .topBar {
+  padding: 0.4rem 0;
   border-bottom: 1px solid rgba(51, 62, 72, 0.1);
 }
 .topBarWrapper {
   height: 3.7rem;
   font-size: 1.3rem;
   cursor: pointer;
-  padding: 0.4rem 0;
 }
 .topBarRight,
 .headerContactBox {
@@ -52,7 +52,8 @@
 .email {
   padding-left: 1.5rem;
 }
-.phone, .email {
+.phone,
+.email {
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -98,27 +99,167 @@
 .headerMain {
   padding: 3.2rem 0;
 }
+.headerMainWrapper {
+  height: 4.2rem;
+  align-items: center;
+}
 .headerLogo img {
   width: 12.5rem;
   height: 3rem;
 }
-.searchBox {
-  border-color: $priColor;
+.productSearch {
+  padding: 1rem 3rem;
+  border: 1px solid $priColor;
+  border-radius: 5rem;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  color: $priTextColor;
 }
-.headerMainIcon {
-  position: relative;
-}
-// .headerMainIcon .cartLink {
-//   display: flex;
-// }
-.headerMainIcon .number .nItem {
-  position: absolute;
+.searchIcon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 6rem;
+  height: 4.2rem;
+  border: 1px solid $priColor;
+  border-radius: 5rem;
+  background: $priColor;
+  color: $priTextColor;
+  font-size: 2.4rem;
+}
+.searchIcon:hover {
+  border: 1px solid $priColor;
+  background: $priColor;
+  color: $priTextColor;
+}
+.headerMainList {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5.1rem;
+}
+.headerMainItem {
+  position: relative;
+}
+.headerMainIcon {
+  font-size: 2.4rem;
+  color: $priTextColor;
+}
+.number {
+  position: absolute;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding-left: 2rem;
+  color: $priTextColor;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.nItem {
+  position: absolute;
+  top: 1rem;
+  left: -1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background: $priColor;
-  transform: translate(1rem, -1.7rem);
+  font-size: 1.2rem;
+}
+// header navigation
+.sideMenuHolder {
+  width: 30rem;
+}
+.sideMenuHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  border: 1px solid $priColor;
+  border-radius: 1rem 1rem 0 0;
+  background: $priColor;
+  color: $priTextColor;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.sideMenuHeader:focus,
+.sideMenuHeader:hover {
+  background: $priColor;
+  color: $priTextColor;
+  border: 1px solid $priColor;
+  outline: none;
+}
+.verticalNavBar {
+  margin-top: 0.7rem;
+  width: 100%;
+  background: #fff;
+}
+.highlight {
+  width: calc(100% - 2.6rem);
+  padding: 0.7rem 0;
+  margin: 0 1.3rem;
+  border-bottom: 1px solid #dddddd !important;
+  color: $priTextColor;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.horizontalMenuWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  font-weight: 700;
+  .horizontalMenu {
+    height: 100%;
+    .menuList {
+      display: flex;
+      align-items: center;
+      gap: 2.6rem;
+      height: 100%;
+      .dropDown.active {
+        .dropDownLink {
+          color: $activeColor;
+        }
+      }
+      .dropDown {
+        &Inner {
+          position: relative;
+        }
+        &Link {
+          .labelWrapper {
+            position: absolute;
+            top: -1.3rem;
+            right: 0;
+            display: block;
+            height: 1.6rem;
+            width: 3.5rem;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 300;
+            .label {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+            }
+            .labelNew {
+              background: #007aff;
+            }
+            .labelSale {
+              background: #4cd964;
+            }
+          }
+        }
+      }
+    }
+  }
+  .shippingText {
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 1rem 0;
+  }
 }

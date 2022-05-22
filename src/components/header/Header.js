@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import { Container, Row, Col, InputGroup, Input, Button } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  InputGroup,
+  Input,
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownMenu,
+} from "reactstrap";
 // import icon
 import {
   FaPhoneAlt,
@@ -10,13 +21,17 @@ import {
   FaRegHeart,
 } from "react-icons/fa";
 import { AiOutlineUser, AiOutlineShopping } from "react-icons/ai";
-import { BiGitCompare } from "react-icons/bi";
+import { BiGitCompare, BiMenuAltRight } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
+import { RiArrowDropDownLine } from "react-icons/ri";
 // import your component
 import styles from "../header/Header.module.scss";
 import logoWebSite from "../../assets/images";
 
 export default function Header() {
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
   return (
     <div className={styles.header}>
       {/* top bar */}
@@ -91,7 +106,7 @@ export default function Header() {
       {/* header main */}
       <div className={styles.headerMain}>
         <Container>
-          <Row>
+          <Row className={styles.headerMainWrapper}>
             <Col lg="3">
               {/* logo */}
               <div className={styles.headerLogo}>
@@ -104,51 +119,45 @@ export default function Header() {
               {/* search box */}
               <div className={styles.searchBox}>
                 <InputGroup>
-                  <Input />
-                  <Button>
+                  <Input
+                    placeholder="Search"
+                    className={styles.productSearch}
+                  />
+                  <Button type="submit" className={styles.searchIcon}>
                     <FiSearch />
                   </Button>
                 </InputGroup>
               </div>
             </Col>
             <Col lg="3">
-              <Row justify="end" align="middle" style={{ gap: "5.1rem" }}>
-                <Col>
-                  {/* compare */}
-                  <div className={clsx(styles.compare, styles.headerMainIcon)}>
-                    <a href="/">
-                      <BiGitCompare />
-                      <span className={styles.number}>
-                        <span className={styles.nItem}>0</span>
-                      </span>
-                    </a>
-                  </div>
-                </Col>
-                <Col>
-                  {/* wishlist */}
-                  <div className={clsx(styles.wishlist, styles.headerMainIcon)}>
-                    <Link to={"/"} title="wishlist">
-                      <FaRegHeart />
-                      <span className={styles.number}>
-                        <span className={styles.nItem}>0</span>
-                      </span>
-                    </Link>
-                  </div>
-                </Col>
-                <Col>
-                  <div className={clsx(styles.topCart, styles.headerMainIcon)}>
-                    <div className={styles.cart}>
-                      <Link to={"/"} title="cart">
-                        <AiOutlineShopping />
-                        <span className={styles.number}>
-                          <span className={styles.nItem}>0</span>
-                          $0.00
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
+              <div className={styles.headerMainList}>
+                {/* compare */}
+                <a href="/" className={styles.headerMainItem}>
+                  <BiGitCompare className={styles.headerMainIcon} />
+                  <span className={styles.number}>
+                    <span className={styles.nItem}>0</span>
+                  </span>
+                </a>
+                {/* wishlist */}
+                <Link
+                  to={"/"}
+                  title="wishlist"
+                  className={styles.headerMainItem}
+                >
+                  <FaRegHeart className={styles.headerMainIcon} />
+                  <span className={styles.number}>
+                    <span className={styles.nItem}>0</span>
+                  </span>
+                </Link>
+                {/* cart */}
+                <Link to={"/"} title="cart" className={styles.headerMainItem}>
+                  <AiOutlineShopping className={styles.headerMainIcon} />
+                  <span className={styles.number}>
+                    <span className={styles.nItem}>0</span>
+                    $0.00
+                  </span>
+                </Link>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -157,10 +166,115 @@ export default function Header() {
       <div className={styles.headerNavigation}>
         <Container>
           <Row>
-            <Col span={6}>
-              <div className={styles.verticalMenu}></div>
+            <Col lg="3">
+              {/* vertical menu */}
+              <div className={styles.verticalMenu}>
+                <Dropdown
+                  isOpen={dropdownOpen}
+                  toggle={toggle}
+                  className={styles.sideMenuHolder}
+                >
+                  <DropdownToggle className={styles.sideMenuHeader}>
+                    <BiMenuAltRight />
+                    All Departments
+                  </DropdownToggle>
+                  <DropdownMenu flip={false} className={styles.verticalNavBar}>
+                    <DropdownItem className={clsx(styles.highlight)}>
+                      <Link to="/">Value of the Day</Link>
+                    </DropdownItem>
+                    <DropdownItem className={clsx(styles.highlight)}>
+                      <Link to="/">Top 100 Offers</Link>
+                    </DropdownItem>
+                    <DropdownItem className={clsx(styles.highlight)}>
+                      <Link to="/">New Arrivals</Link>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
             </Col>
-            <Col span={18}></Col>
+            <Col lg="9">
+              {/* horizontal menu */}
+              <div className={styles.horizontalMenuWrapper}>
+                {/* menu */}
+                <div className={styles.horizontalMenu}>
+                  <ul className={styles.menuList}>
+                    {/* home */}
+                    <li className={clsx(styles.dropDown, styles.active)}>
+                      <div className={styles.dropDownInner}>
+                        <Link to="/" className={styles.dropDownLink}>
+                          <span>Home</span>
+                        </Link>
+                        <span className={styles.expand}>
+                          <RiArrowDropDownLine />
+                        </span>
+                      </div>
+                    </li>
+                    {/* catalog */}
+                    <li className={styles.dropDown}>
+                      <div className={styles.dropDownInner}>
+                        <Link to="/" className={styles.dropDownLink}>
+                          <span>Catalog</span>
+                          <span className={styles.labelWrapper}>
+                            <span
+                              className={clsx(styles.label, styles.labelNew)}
+                            >
+                              <span className={styles.newText}>New</span>
+                            </span>
+                          </span>
+                        </Link>
+                        <span className={styles.expand}>
+                          <RiArrowDropDownLine />
+                        </span>
+                      </div>
+                    </li>
+                    {/* page */}
+                    <li className={styles.dropDown}>
+                      <div className={styles.dropDownInner}>
+                        <Link to="/" className={styles.dropDownLink}>
+                          <span>Page</span>
+                        </Link>
+                        <span className={styles.expand}>
+                          <RiArrowDropDownLine />
+                        </span>
+                      </div>
+                    </li>
+                    {/* feature */}
+                    <li className={styles.dropDown}>
+                      <div className={styles.dropDownInner}>
+                        <Link to="/" className={styles.dropDownLink}>
+                          <span>Features</span>
+                          <span className={styles.labelWrapper}>
+                            <span
+                              className={clsx(styles.label, styles.labelSale)}
+                            >
+                              <span className={styles.saleText}>Sale</span>
+                            </span>
+                          </span>
+                        </Link>
+                        <span className={styles.expand}>
+                          <RiArrowDropDownLine />
+                        </span>
+                      </div>
+                    </li>
+                    {/* gift cards */}
+                    <li className={styles.dropDown}>
+                      <div className={styles.dropDownInner}>
+                        <Link to="/" className={styles.dropDownLink}>
+                          <span>Gift Cards</span>
+                        </Link>
+                        <span className={styles.expand}>
+                          <RiArrowDropDownLine />
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                {/* shipping text */}
+                <div className={styles.shippingText}>
+                  <span>Free shipping on Orders $500+</span>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Container>
       </div>
