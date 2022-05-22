@@ -1,11 +1,33 @@
 @import "../variables/Variables.scss";
+// top bar
 .topBar {
   border-bottom: 1px solid rgba(51, 62, 72, 0.1);
 }
 .topBarWrapper {
-  font-size: 1.3rem;
   height: 3.7rem;
+  font-size: 1.3rem;
   cursor: pointer;
+  padding: 0.4rem 0;
+}
+.topBarRight,
+.headerContactBox {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 1rem;
+}
+.topBarRight {
+  justify-content: flex-end;
+}
+.customerAccount {
+  display: flex;
+  gap: 0.5rem;
+}
+.topBarLink,
+#register {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 .storeLocation::before,
 .order::before,
@@ -29,6 +51,11 @@
 }
 .email {
   padding-left: 1.5rem;
+}
+.phone, .email {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 .headerIcon {
   color: $priColor;
@@ -66,4 +93,32 @@
   padding: 0 1.5rem;
   height: 3.5rem;
   cursor: pointer;
+}
+// header main
+.headerMain {
+  padding: 3.2rem 0;
+}
+.headerLogo img {
+  width: 12.5rem;
+  height: 3rem;
+}
+.searchBox {
+  border-color: $priColor;
+}
+.headerMainIcon {
+  position: relative;
+}
+// .headerMainIcon .cartLink {
+//   display: flex;
+// }
+.headerMainIcon .number .nItem {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: $priColor;
+  transform: translate(1rem, -1.7rem);
 }
