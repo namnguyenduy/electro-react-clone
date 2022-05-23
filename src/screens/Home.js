@@ -20,12 +20,12 @@ export default function Home() {
   const items = [
     {
       caption: "Sample Caption One",
-      src: "https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png",
+      src: "https://picsum.photos/500/116",
       altText: "Slide One",
     },
     {
       caption: "Sample Caption Two",
-      src: "https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png",
+      src: "https://picsum.photos/500/115",
       altText: "Slide Two",
     },
   ];
@@ -68,11 +68,37 @@ export default function Home() {
       {/*  carouse */}
       <div
         className="mainContent"
-        style={{ background: "tomato", height: "100vh" }}
+        // style={{ background: "tomato", height: "100vh" }}
       >
         <div className="homeMainContent">
           {/* home slideshow */}
-          <div className="homeSlideShow"></div>
+          <div className="homeSlideShow">
+            <Carousel
+              previous={previousButton}
+              next={nextButton}
+              activeIndex={activeIndex}
+            >
+              <CarouselIndicators
+                items={items}
+                activeIndex={activeIndex}
+                onClickHandler={(newIndex) => {
+                  if (animating) return;
+                  setActiveIndex(newIndex);
+                }}
+              />
+              {carouselItemData}
+              <CarouselControl
+                directionText="Prev"
+                direction="prev"
+                onClickHandler={previousButton}
+              />
+              <CarouselControl
+                directionText="Next"
+                direction="next"
+                onClickHandler={nextButton}
+              />
+            </Carousel>
+          </div>
         </div>
       </div>
       {/* footer */}
