@@ -26,7 +26,7 @@ import { FiSearch } from "react-icons/fi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 // import your component
 import styles from "../header/Header.module.scss";
-import logoWebSite from "../../assets/images";
+import logoWebSite from "../../assets/images/Logo";
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = React.useState(false);

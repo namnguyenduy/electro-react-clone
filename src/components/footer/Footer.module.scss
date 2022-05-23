@@ -1,0 +1,150 @@
+@import "../variables/Variables.scss";
+.footer {
+    background: #f8f8f8;
+}
+//  widget newsletter
+.widgetNewsletter {
+  height: 5.6rem;
+  padding: 1.5rem 0;
+}
+.newsletterContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  height: 100%;
+  background: $priColor;
+  border-radius: 1rem;
+  .newsletterTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 2rem 0.4rem 0;
+    font-size: 2.2rem;
+    font-weight: 400;
+    .paperPlane {
+      font-size: 3rem;
+    }
+  }
+  p {
+    padding: 0.8rem 2rem 0.6rem 0;
+    margin: 0;
+    span {
+      font-weight: 700;
+    }
+  }
+  #subscribeForm {
+    display: flex;
+    align-items: center;
+    width: 55.2rem;
+    height: 4.2rem;
+
+    #emailInput {
+      display: block;
+      width: 85%;
+      height: 100%;
+      padding: 1.1rem 3rem;
+      border: 1px solid #fff;
+      border-top-left-radius: 5rem;
+      border-bottom-left-radius: 5rem;
+      line-height: 2rem;
+      font-size: 1.6rem;
+    }
+    #emailSubmit {
+      display: block;
+      padding: 0.6rem 3.5rem;
+      height: 100%;
+      border-radius: 0 5rem 5rem 0;
+      background: rgb(51, 62, 72);
+      border: 1px solid rgb(51, 62, 72);
+      font-size: 1.6rem;
+    }
+  }
+}
+// footer widget
+.footerWidget {
+  padding-top: 3.3rem;
+  .footerInner {
+    padding: 5.8rem 0 3.2rem;
+    .footerBlock {
+      .logoFooter {
+        height: 4.08rem;
+        img {
+          width: 15.6rem;
+          height: 3.7rem;
+        }
+      }
+      .supportBox1 {
+        margin-top: 4rem;
+        display: flex;
+        height: 5.5rem;
+        gap: 2rem;
+        img {
+          width: 6.6rem;
+          height: 100%;
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 0.7rem;
+          font-size: 1.3rem;
+          span:nth-of-type(2) {
+            font-size: 2rem;
+            font-weight: 400;
+          }
+        }
+      }
+      .supportBox2 {
+        padding-top: 2.8rem;
+        .text {
+          display: flex;
+          flex-direction: column;
+          span:nth-of-type(1) {
+            font-weight: 700;
+          }
+        }
+      }
+      .widgetSocial {
+        margin-top: 3.4rem;
+        &Icon {
+          display: flex;
+          height: 3.44rem;
+          align-items: center;
+          gap: 2rem;
+          margin: 0;
+          padding: 0;
+          font-size: 2.4rem;
+          & li a {
+            transition: 0.2s ease-in-out;
+            &:hover {
+              color: $priColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// footer menu
+.footerMenu {
+    padding: 0 1.5rem;
+    h6 {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .fList {
+        margin-top: 2.8rem;
+        margin-bottom: 0;
+        padding: 0;
+        li {
+            margin-bottom: 1.2rem;
+            span {
+                transition: 0.2s ease-in-out;
+                &:hover {
+                    color: $hoverColor;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
