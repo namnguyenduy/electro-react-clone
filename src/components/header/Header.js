@@ -212,7 +212,7 @@ export default function Header() {
                     {/* catalog */}
                     <li className={styles.dropDown}>
                       <div className={styles.dropDownInner}>
-                        <Link to="/" className={styles.dropDownLink}>
+                        <Link to="/collections/all" className={styles.dropDownLink}>
                           <span>Catalog</span>
                           <span className={styles.labelWrapper}>
                             <span

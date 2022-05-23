@@ -1,0 +1,49 @@
+@import "../src/components/variables/Variables.scss";
+// breadcrumb
+.breadcrumbWrapper {
+  margin: 2.5rem 0;
+}
+.breadcrumbHolder {
+  display: flex;
+  align-items: center;
+  height: 3.6rem;
+}
+// sideBar
+.sideBar {
+    padding: 0 1.5rem;
+}
+.sbMenu {
+    border: 2px solid $borderColor;
+    border-radius: 0.6rem;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item,
+.pro-sidebar > .pro-sidebar-inner {
+  background: #fff;
+  color: $priTextColor;
+}
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
+  transition: 0.3s ease-in-out;
+  &:focus {
+    color: $priTextColor;
+  }
+  &:hover {
+    color: $priTextColor;
+    font-weight: 700;
+  }
+}
+.pro-sidebar
+  .pro-menu
+  .pro-menu-item.pro-sub-menu
+  .pro-inner-list-item
+  .pro-inner-item:hover {
+  color: $priColor;
+  font-weight: 400;
+}
+.pro-sidebar .pro-menu a {
+  color: $priTextColor;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $priColor;
+    font-weight: 400;
+  }
+}

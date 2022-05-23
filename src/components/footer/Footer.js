@@ -286,7 +286,7 @@ export default function Footer() {
                   </li>
                   {/* item 6 */}
                   <li>
-                    <Link to={"./"}>
+                    <Link to={"/"}>
                       <span>Sports & Outdoors </span>
                     </Link>
                   </li>

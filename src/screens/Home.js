@@ -61,17 +61,21 @@ export default function Home() {
   });
   return (
     <div className="wrapper">
+      {/* header */}
       <div>
-        {/* header */}
         <Header />
       </div>
       {/*  carouse */}
-      <div className="mainContent" style={{background: 'tomato', height: '100vh'}}>
+      <div
+        className="mainContent"
+        style={{ background: "tomato", height: "100vh" }}
+      >
         <div className="homeMainContent">
           {/* home slideshow */}
           <div className="homeSlideShow"></div>
         </div>
       </div>
+      {/* footer */}
       <div>
         <Footer />
       </div>
