@@ -1,0 +1,145 @@
+@import "./components/variables/Variables.scss";
+// carousel
+.slideShowWrapper {
+  height: 42rem;
+  background: url("./assets/images/carousel/bgcCarousel.jpg");
+  background-size: cover;
+  background-position: center;
+}
+// separator
+.sectionSeparator {
+  padding: 3rem 0;
+}
+// home banner
+.bannerItem {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.2;
+    transition: 0.3s ease-in-out;
+  }
+  &:hover::before {
+    top: 0;
+  }
+}
+// tab panel
+.tabPanel {
+  padding: 3.6rem 0 2.8rem;
+}
+.navTabs {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-left: 20%;
+  font-size: 1.8rem;
+  .navItem {
+    .navLink {
+      padding-bottom: 0.9rem;
+      transition: 0.3s ease-in-out;
+      &.active {
+        border-bottom: 3px solid $priColor;
+        font-weight: 700;
+      }
+      &:hover:not(.active) {
+        border-bottom: 3px solid $priColor;
+      }
+    }
+  }
+}
+// tab content
+.productWrapper {
+  width: 45.5rem;
+  padding: 2rem 2rem 2.5rem;
+  border: 2px solid $priColor;
+  border-radius: 2rem;
+  .productHead {
+    position: relative;
+    width: 100%;
+    height: 37.674rem;
+    margin-bottom: 0.9rem;
+    .specialOfferText {
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      font-size: 2.2rem;
+    }
+    .specialProductLabel {
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 7.6rem;
+      height: 7.6rem;
+      padding: 1.9rem 0.5rem;
+      border-radius: 50%;
+      background: $priColor;
+      font-size: 1.2rem;
+      .percent {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+  }
+  .productName {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    a {
+      color: $blueLink;
+    }
+  }
+  .productPrice {
+    text-align: center;
+    .priceSale {
+      font-size: 3rem;
+      color: $activeColor;
+      margin-right: 0.8rem;
+    }
+    .priceCompare {
+      font-size: 1.8rem;
+      color: $gray;
+      text-decoration: line-through;
+    }
+  }
+  .dealStock {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.8rem 0 1.1rem;
+  }
+  .progress {
+    height: 2rem;
+    border-radius: 5rem;
+    &-bar {
+      background: $priColor;
+      border-radius: 5rem;
+    }
+  }
+  .countDownWrapper {
+    .offerText {
+      padding-top: 1.7rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+.countBox {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 2rem;
+  &Item {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
