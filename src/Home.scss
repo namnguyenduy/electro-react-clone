@@ -1,10 +1,70 @@
 @import "./components/variables/Variables.scss";
 // carousel
 .slideShowWrapper {
+  position: relative;
   height: 42rem;
   background: url("./assets/images/carousel/bgcCarousel.jpg");
   background-size: cover;
   background-position: center;
+}
+.carousel-item {
+  height: 100%;
+  .sliderContent {
+    flex-direction: row-reverse;
+    .imageLayerBox {
+      width: 52rem;
+      height: 42rem;
+    }
+  }
+  img {
+    object-fit: cover;
+  }
+}
+.carousel-indicators {
+  button {
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+    border: unset !important;
+    border-radius: 5rem;
+    background: #bcbcbc !important;
+    margin: 0 0.7rem !important;
+    transition: 0.3s ease-in-out !important;
+  }
+  button:hover,
+  button.active {
+    width: 3rem !important;
+    background: $priColor !important;
+  }
+}
+.carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0;
+  background: $priTextColor;
+  transition: 0.3s ease-in-out;
+}
+.slideShowWrapper:hover .carousel-control-next,
+.slideShowWrapper:hover .carousel-control-prev {
+  opacity: 1;
+}
+.carousel-control-prev {
+  left: 0;
+  &-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+.carousel-control-right {
+  right: 0;
 }
 // separator
 .sectionSeparator {
@@ -38,7 +98,6 @@
   display: flex;
   justify-content: center;
   gap: 5rem;
-  margin-left: 20%;
   font-size: 1.8rem;
   .navItem {
     .navLink {
@@ -91,28 +150,6 @@
       }
     }
   }
-  .productName {
-    font-size: 1.4rem;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    a {
-      color: $blueLink;
-    }
-  }
-  .productPrice {
-    text-align: center;
-    .priceSale {
-      font-size: 3rem;
-      color: $activeColor;
-      margin-right: 0.8rem;
-    }
-    .priceCompare {
-      font-size: 1.8rem;
-      color: $gray;
-      text-decoration: line-through;
-    }
-  }
   .dealStock {
     display: flex;
     justify-content: space-between;
@@ -128,18 +165,70 @@
   }
   .countDownWrapper {
     .offerText {
+      display: block;
       padding-top: 1.7rem;
       font-size: 1.5rem;
+      text-align: center;
     }
+    .countDown {
+      margin-top: 1.5rem;
+    }
+  }
+}
+.productName {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  a {
+    color: $blueLink !important;
+  }
+}
+.productPrice {
+  text-align: center;
+  .priceSale {
+    font-size: 3rem;
+    color: $activeColor;
+    margin-right: 0.8rem;
+  }
+  .priceCompare {
+    font-size: 1.8rem;
+    color: $gray;
+    text-decoration: line-through;
   }
 }
 .countBox {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   &Item {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    .count {
+      height: 4rem;
+      padding: 0 0.7rem;
+      background: #e6e6e6 !important;
+      line-height: 4rem;
+      font-size: 3rem;
+      font-weight: 500;
+    }
+    .label {
+      font-size: 1.2ren;
+      text-transform: uppercase;
+    }
+  }
+  .split {
+    display: block;
+    font-size: 2.6rem;
+    font-weight: 500;
+  }
+}
+// home categories
+.hProductWrapper {
+  padding: 1.5rem 2rem;
+  .hProductHead {
   }
 }

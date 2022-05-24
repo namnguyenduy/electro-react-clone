@@ -12,10 +12,14 @@ import {
   Progress,
 } from "reactstrap";
 import CountdownTimer from "react-component-countdown-timer";
+// import icon
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { RiHeartLine } from "react-icons/ri";
 // import my component
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import "../Home.scss";
+import { homeCategories, CarouselInfo } from "../fakeData";
 
 export default function Home() {
   // State for Active index
@@ -24,24 +28,7 @@ export default function Home() {
   // State for Animation
   const [animating, setAnimating] = React.useState(false);
 
-  // Sample items for Carousel
-  const CarouselInfo = [
-    {
-      caption: "Sample Caption One",
-      src: require("../assets/images/carousel/slider1.webp").default,
-      altText: "Slide One",
-    },
-    {
-      caption: "Sample Caption Two",
-      src: require("../assets/images/carousel/slider2.webp").default,
-      altText: "Slide Two",
-    },
-    {
-      caption: "Sample Caption Three",
-      src: require("../assets/images/carousel/slider3.webp").default,
-      altText: "Slide Two",
-    },
-  ];
+  // Sample it
   // Items array length
   const itemLength = CarouselInfo.length - 1;
 
@@ -60,14 +47,19 @@ export default function Home() {
   };
 
   // Carousel Item Data
-  const carouselItemData = CarouselInfo.map((item) => {
+  const carouselItemData = CarouselInfo.map((e) => {
     return (
       <CarouselItem
-        key={CarouselInfo.src}
         onExited={() => setAnimating(false)}
         onExiting={() => setAnimating(true)}
       >
-        <img src={CarouselInfo.src} alt={CarouselInfo.altText} />
+        <Container>
+          <Row className="sliderContent">
+            <div className="imageLayerBox">
+              <img src={e.img} alt="" className="sliderImg" />
+            </div>
+          </Row>
+        </Container>
       </CarouselItem>
     );
   });
@@ -173,32 +165,10 @@ export default function Home() {
         <div className="tabPanel">
           <Container>
             <div className="tabContentWrapper">
-              {/* nav tabs */}
-              <div className="navTabWrapper">
-                <ul className="navTabs">
-                  {/*  Featured */}
-                  <li className="navItem">
-                    <a href="/" className={clsx("navLink", "active")}>
-                      Featured
-                    </a>
-                  </li>
-                  {/*On Sale */}
-                  <li className="navItem">
-                    <a href="/" className="navLink">
-                      On Sale
-                    </a>
-                  </li>
-                  {/* Top Rated */}
-                  <li className="navItem">
-                    <a href="/" className="navLink">
-                      Top Rated
-                    </a>
-                  </li>
-                </ul>
-              </div>
               {/* tab content */}
-              <div className="tabContent">
-                <div className="tabsSpecialProduct">
+              <Row className="tabContent">
+                {/* tab special product */}
+                <Col lg="5" className="tabsSpecialProduct">
                   <div className="productWrapper">
                     {/* product head */}
                     <div className="productHead">
@@ -239,14 +209,95 @@ export default function Home() {
                       </div>
                       <div className="countDownWrapper">
                         <span class="offerText">Hurry Up! Offer ends in</span>
-                        <div style={{ textAlign: "center" }}>
+                        <div className="countDown">
                           <CountdownTimer count={5432} showTitle hideDay />
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </Col>
+                {/*  */}
+                <Col lg="7" className="tabList">
+                  {/* nav tabs */}
+                  <div className="navTabWrapper">
+                    <ul className="navTabs">
+                      {/*  Featured */}
+                      <li className="navItem">
+                        <a href="/" className={clsx("navLink", "active")}>
+                          Featured
+                        </a>
+                      </li>
+                      {/*On Sale */}
+                      <li className="navItem">
+                        <a href="/" className="navLink">
+                          On Sale
+                        </a>
+                      </li>
+                      {/* Top Rated */}
+                      <li className="navItem">
+                        <a href="/" className="navLink">
+                          Top Rated
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  {/* list */}
+                  <Row>
+                    {homeCategories.map((e) => (
+                      <Col lg="3">
+                        <div className="hProductWrapper">
+                          {/* product head */}
+                          <div className="hProductHead">
+                            <div className="productGroupVendorName">
+                              <div className="productVendor">
+                                <Link to={"/"} title={e.title}>
+                                  {e.productVendor}
+                                </Link>
+                              </div>
+                              <h5 className="productName">
+                                <Link to={"/"}>{e.productName}</Link>
+                              </h5>
+                            </div>
+                            <div className="featureImg">
+                              <Link to={"/"}>
+                                <img src={e.img} alt="" />
+                              </Link>
+                            </div>
+                          </div>
+                          {/* product content */}
+                          <div className="productContent">
+                            {/* priceCartWrapper */}
+                            <div className="priceCartWrapper">
+                              <div className="productPrice">
+                                <span className="priceSale">{e.priceSale}</span>
+                                <span className="priceCompare">
+                                  {e.priceCompare}
+                                </span>
+                              </div>
+                              <div className="productAdd">
+                                <Link to={"/"} title={e.addCartTitle}>
+                                  {e.addCartIcon}
+                                </Link>
+                              </div>
+                            </div>
+                            {/* product button */}
+                            <div className="productButton">
+                              <div className="quickShop">
+                                <MdOutlineRemoveRedEye />
+                                <span>View</span>
+                              </div>
+                              <div className="productWishlist">
+                                <RiHeartLine />
+                                <span>Wishlist</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    ))}
+                  </Row>
+                </Col>
+              </Row>
             </div>
           </Container>
         </div>
