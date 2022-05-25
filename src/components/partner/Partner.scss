@@ -1,0 +1,35 @@
+.partnerWrapper {
+  padding: 4.7rem 0 3.5rem;
+  .slick-slider {
+    position: relative;
+    height: 7.6rem;
+    .slick-arrow {
+      position: absolute;
+      top: 41%;
+      transform: translateY(-50%);
+      background: #fff;
+      color: #000 !important
+    }
+    .slick-prev {
+        left: 0;
+    }
+    .slick-right {
+        right: 0;
+    }
+    .slick-list {
+      height: 100%;
+      .slick-track {
+        height: 100%;
+        .partnerItem {
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 14.7rem;
+            height: 5.4rem;
+          }
+        }
+      }
+    }
+  }
+}

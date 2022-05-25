@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import {
@@ -17,16 +17,17 @@ import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiHeartLine } from "react-icons/ri";
 // import my component
 import Header from "../components/header/Header";
+import Partner from "../components/partner/Partner";
 import Footer from "../components/footer/Footer";
 import "../Home.scss";
 import { homeCategories, CarouselInfo } from "../fakeData";
 
 export default function Home() {
   // State for Active index
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   // State for Animation
-  const [animating, setAnimating] = React.useState(false);
+  const [animating, setAnimating] = useState(false);
 
   // Sample it
   // Items array length
@@ -244,7 +245,7 @@ export default function Home() {
                   {/* list */}
                   <Row>
                     {homeCategories.map((e) => (
-                      <Col lg="3">
+                      <Col lg="4">
                         <div className="hProductWrapper">
                           {/* product head */}
                           <div className="hProductHead">
@@ -301,6 +302,10 @@ export default function Home() {
             </div>
           </Container>
         </div>
+      </div>
+      {/* partner */}
+      <div>
+        <Partner />
       </div>
       {/* footer */}
       <div>
