@@ -1,20 +1,29 @@
+@import "../variables/Variables.scss";
 .partnerWrapper {
   padding: 4.7rem 0 3.5rem;
   .slick-slider {
     position: relative;
     height: 7.6rem;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
     .slick-arrow {
       position: absolute;
-      top: 41%;
+      top: 50%;
       transform: translateY(-50%);
-      background: #fff;
-      color: #000 !important
+      background: tomato;
+      color: #000 !important;
+      border-radius: 50%;
     }
     .slick-prev {
-        left: 0;
+        left: -2rem;
     }
     .slick-right {
-        right: 0;
+        right: 4.2rem;
+    }
+    :is(.slick-prev,.slick-next)::before {
+      background: $priColor;
+      color: #000;
+      border-radius: 50%;
     }
     .slick-list {
       height: 100%;
@@ -24,6 +33,7 @@
           display: flex !important;
           justify-content: center;
           align-items: center;
+          height: 7.4rem;
           img {
             width: 14.7rem;
             height: 5.4rem;

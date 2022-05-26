@@ -81,6 +81,99 @@ export const homeCategories = [
     addCartTitle: 'Add to cart'
   },
 ];
+
+export const products = [
+  {
+    title: "Armani",
+    productVendor: "Armani",
+    productName: "Black Fashion Zapda",
+    img: `${require("./assets/images/product/product1.webp")}`,
+    priceSale: "$456.00",
+    priceCompare: "$651.00",
+    addCartIcon: <IoIosArrowRoundForward/>,
+    addCartTitle: 'Select options',
+  },
+  {
+    title: "Christian Dior",
+    productVendor: "Christian Dior",
+    productName: "Coneco Product Sample",
+    img: `${require("./assets/images/product/product2.webp")}`,
+    priceSale: "$404.00",
+    priceCompare: "$417.00",
+    addCartIcon: <IoIosArrowRoundForward/>,
+    addCartTitle: 'Select options'
+  },
+  {
+    title: "Dolce & Gabbanar",
+    productVendor: "Dolce & Gabbana",
+    productName: "Daltex Product Example",
+    img: `${require("./assets/images/product/product3.webp")}`,
+    priceSale: "$261.00",
+    priceCompare: "$326.00",
+    addCartIcon: <FaCartArrowDown/>,
+    addCartTitle: 'Add to cart'
+  },
+  {
+    title: "Donna Karan",
+    productVendor: "Donna Karan",
+    productName: "Dento Product Sample",
+    img: `${require("./assets/images/product/product4.webp")}`,
+    priceSale: "$20.00",
+    priceCompare: "$27.00",
+    addCartIcon: <IoIosArrowRoundForward/>,
+    addCartTitle: 'Select options'
+  },
+  {
+    title: "Givenchy",
+    productVendor: "Givenchy",
+    productName: "Dentoex Product Sample",
+    img: `${require("./assets/images/product/product5.webp")}`,
+    priceSale: "$586.00",
+    priceCompare: "$650.00",
+    addCartIcon: <FaCartArrowDown/>,
+    addCartTitle: 'Add to cart'
+  },
+  {
+    title: "Armani",
+    productVendor: "Armani",
+    productName: "Donkix Product Sample",
+    img: `${require("./assets/images/product/product6.webp")}`,
+    priceSale: "$79.00",
+    priceCompare: "$417.00",
+    addCartIcon: <IoIosArrowRoundForward/>,
+    addCartTitle: 'Select options'
+  },
+  {
+    title: "Bulgari",
+    productVendor: "Bulgari",
+    productName: "Faxtex Product Sample",
+    img: `${require("./assets/images/product/product7.webp")}`,
+    priceSale: "$15.00",
+    priceCompare: "$25.00",
+    addCartIcon: <IoIosArrowRoundForward/>,
+    addCartTitle: 'Select options'
+  },
+  {
+    title: "Christian Dior",
+    productVendor: "Christian Dior",
+    productName: "Finity Product Sample",
+    img: `${require("./assets/images/product/product8.webp")}`,
+    priceSale: "$118.00",
+    priceCompare: "$157.00",
+    addCartIcon: <IoIosArrowRoundForward/>,
+    addCartTitle: 'Select options'
+  },
+  {
+    title: "Armani",
+    productVendor: "Armani",
+    productName: "Freshkix Product Sample",
+    img: `${require("./assets/images/product/product9.webp")}`,
+    priceSale: "$157.00",
+    priceCompare: "$196.00",
+    addCartIcon: <FaCartArrowDown/>,
+    addCartTitle: 'Add to cart'
+  },
+];
 export const partner = [
   {
     img: `${require("./assets/images/partner/partner1.webp")}`,

@@ -11,16 +11,17 @@
 // sideBar
 .sideBar {
   padding: 0 1.5rem;
-}
-.sbMenu {
-  border: 2px solid $borderColor;
-  border-radius: 0.6rem;
-}
-.sbTitle {
-  padding: 1.5rem 2.2rem;
-  border-bottom: 1px solid $borderColor;
-  font-size: 2rem;
-  font-weight: 400;
+  .sbMenu {
+    border: 2px solid $borderColor;
+    border-radius: 0.6rem;
+    margin-bottom: 4.6rem;
+    .sbTitle {
+      padding: 1.5rem 2.2rem;
+      border-bottom: 1px solid $borderColor;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
 }
 .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item,
 .pro-sidebar > .pro-sidebar-inner {
@@ -78,9 +79,169 @@
   padding: 0.7rem 2rem;
   margin-bottom: 2rem;
   background: #f5f5f5;
+  border-radius: 0.9rem;
   .groupToolBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .gridList {
+      display: flex;
+      gap: 2rem;
+      .grid {
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+    }
+    .sortBy {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid $gray;
+      border-radius: 5rem;
+      padding: 0 2.5rem;
+    }
+  }
+}
+.css-1s2u09g-control {
+  border-color: transparent !important;
+  background: unset !important;
+  &:focus {
+    border-color: transparent !important;
+  }
+}
+.css-14el2xx-placeholder {
+  color: transparent !important;
+}
+.css-1okebmr-indicatorSeparator {
+  background: transparent !important
+}
+.sbHeadingFilter {
+  height: 4.4rem;
+  .sbTitle {
+    position: relative;
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $borderColor;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 7rem;
+      height: 0.2rem;
+      background: $priColor;
+    }
+  }
+}
+.filterAccordion {
+  margin-top: 3.5rem;
+}
+.css-ahj2mt-MuiTypography-root {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+}
+.css-o4b71y-MuiAccordionSummary-content {
+  margin: 2.7rem 0 !important;
+}
+:is(.colorList, .sizeList) {
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+}
+.colorList {
+  .colorItem {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-left: 1px solid $borderColor;
+    border-radius: 50%;
+    box-shadow: inset -1px 0 3px $borderColor;
+  }
+  .colorBlack {
+    background: #000;
+  }
+  .colorBlue {
+    background: #00f;
+  }
+  .colorRed {
+    background: #f00;
+  }
+  .colorYellow {
+    background: yellow;
+  }
+}
+.sizeList {
+  .sizeItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 1.5rem;
+    border: 2px solid $borderColor;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      color: $priColor;
+      border-color: $priColor;
+    }
+  }
+}
+:is(.brandItem, .priceItem) {
+  position: relative;
+  margin-bottom: 1.3rem;
+}
+:is(.brandItem, .priceItem) {
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $priColor;
+  }
+  &:hover::before {
+    background: $priColor;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.2rem;
+    left: -2.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid $borderColor;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: $priColor;
+    }
+  }
+}
+// pagination
+.paginationHolder {
+  margin-top: 3rem;
+  .pagination {
+    box-sizing: content-box;
+    height: 4rem;
+    padding-top: 2.5rem;
+    margin: 2.5rem;
+    border-top: 1px solid $gray1;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    li {
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 1px solid $borderColor;
+        border-radius: 50%;
+      }
+    }
+    li.active {
+      a {
+        background: $priColor;
+        font-weight: 700;
+      }
+    }
   }
 }
