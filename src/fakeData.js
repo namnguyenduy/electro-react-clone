@@ -10,12 +10,21 @@ export const languageFlag = [
 export const CarouselInfo = [
   {
     img: `${require("./assets/images/carousel/slider1.webp")}`,
+    heading: "the new standard",
+    subHeading: "under favorable smartwatches",
+    button: "start buying"
   },
   {
     img: `${require("./assets/images/carousel/slider2.webp")}`,
+    heading: "shop to get what you love",
+    subHeading: "TIMEPIECES THAT MAKE A STATEMENT UP TO 40% OFF",
+    button: "start buying"
   },
   {
     img: `${require("./assets/images/carousel/slider3.webp")}`,
+    heading: "the new standard",
+    subHeading: "under favorable smartwatches",
+    button: "start buying"
   },
 ];
 

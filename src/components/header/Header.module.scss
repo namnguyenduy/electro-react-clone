@@ -3,68 +3,58 @@
 .topBar {
   padding: 0.4rem 0;
   border-bottom: 1px solid rgba(51, 62, 72, 0.1);
+  .topBarWrapper {
+    height: 3.7rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    :is(.topBarRight, .headerContactBox) {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      gap: 1rem;
+    }
+    .email {
+      padding-left: 1.5rem;
+    }
+    :is(.phone, .email) {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .topBarRight {
+      justify-content: flex-end;
+      .customerAccount {
+        display: flex;
+        gap: 0.5rem;
+      }
+      :is(.topBarLink, #register) {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+    }
+  }
 }
-.topBarWrapper {
-  height: 3.7rem;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-.topBarRight,
-.headerContactBox {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  gap: 1rem;
-}
-.topBarRight {
-  justify-content: flex-end;
-}
-.customerAccount {
-  display: flex;
-  gap: 0.5rem;
-}
-.topBarLink,
-#register {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-.storeLocation::before,
-.order::before,
-.customerAccount::before,
-.phone::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 15px;
-  background: rgba(51, 62, 72, 0.1);
-}
-.customerAccount,
-.order,
-.storeLocation,
-.phone {
+:is(.storeLocation, .order, .customerAccount, .phone) {
   position: relative;
   padding-right: 1.5rem;
-}
-.email {
-  padding-left: 1.5rem;
-}
-.phone,
-.email {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 15px;
+    background: rgba(51, 62, 72, 0.1);
+  }
 }
 .headerIcon {
   color: $priColor;
   font-size: 1.4rem;
   transition: 0.3s ease-in-out;
 }
-.email:hover .headerIcon,
-.phone:hover .headerIcon {
+:is(.email, .phone):hover .headerIcon {
   color: $priTextColor;
 }
 .customerOr {

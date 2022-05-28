@@ -10,6 +10,7 @@ import {
   Row,
   Col,
   Progress,
+  Button,
 } from "reactstrap";
 import CountdownTimer from "react-component-countdown-timer";
 // import icon
@@ -58,6 +59,15 @@ export default function Home() {
           <Row className="sliderContent">
             <div className="imageLayerBox">
               <img src={e.img} alt="" className="sliderImg" />
+            </div>
+            <div className="contentBox">
+              <div className="contentBoxHeading">
+                <h2>{e.heading}</h2>
+              </div>
+              <div className="contentBoxSubHeading">{e.subHeading}</div>
+              <Button className={clsx("btnSample", "btnSampleLarge")}>
+                {e.button}
+              </Button>
             </div>
           </Row>
         </Container>

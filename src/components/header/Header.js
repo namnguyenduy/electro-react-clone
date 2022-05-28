@@ -82,13 +82,17 @@ export default function Header() {
                 {/* customer account */}
                 <div className={styles.customerAccount}>
                   {/* register */}
-                  <Link to="/" title="Register" id={styles.register}>
+                  <Link
+                    to="/account/register"
+                    title="Register"
+                    id={styles.register}
+                  >
                     <AiOutlineUser />
                     Register
                   </Link>
                   <span className={styles.customerOr}>or</span>
                   {/* login */}
-                  <Link to="/" title="Sign in">
+                  <Link to="/account/login" title="Sign in">
                     Sign in
                   </Link>
                 </div>
@@ -212,7 +216,10 @@ export default function Header() {
                     {/* catalog */}
                     <li className={styles.dropDown}>
                       <div className={styles.dropDownInner}>
-                        <Link to="/collections/all" className={styles.dropDownLink}>
+                        <Link
+                          to="/collections/all"
+                          className={styles.dropDownLink}
+                        >
                           <span>Catalog</span>
                           <span className={styles.labelWrapper}>
                             <span

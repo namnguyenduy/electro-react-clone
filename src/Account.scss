@@ -1,0 +1,76 @@
+@import "./components/variables/Variables.scss";
+.customerContainer {
+  max-width: 72rem;
+  margin: 0 auto;
+  h2 {
+    position: relative;
+    padding-bottom: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $borderColor;
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+    text-transform: capitalize;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 11.5rem;
+      height: 0.2rem;
+      background: $priColor;
+    }
+  }
+  p {
+    line-height: 2.8rem;
+  }
+  .formContainer {
+    padding: 3rem 0;
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    input {
+      display: block;
+      padding: 1.3rem 3rem;
+      margin-bottom: 2rem;
+      border-radius: 5rem;
+      font-size: 1.4rem;
+      &:focus {
+        border-color: $priColor;
+        outline: unset;
+        box-shadow: unset;
+      }
+    }
+    .controlWrapper {
+      padding-top: 1rem;
+      .action {
+        margin-bottom: 2.7rem;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  h5 {
+    font-size: 1.8rem;
+    line-height: 2;
+    margin-bottom: 1.2rem;
+  }
+  .benefitsList {
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      line-height: 2.6rem;
+      margin-bottom: 0.3rem;
+      svg {
+        path {
+          fill: #5bb300;
+        }
+      }
+    }
+  }
+}

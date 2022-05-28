@@ -26,3 +26,26 @@ a[href] {
 ul {
   list-style: none;
 }
+.btnSample {
+  background: $priColor;
+  border-color: $priColor;
+  color: $priTextColor;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background-color: $priTextColor;
+    border-color: $priTextColor;
+    color: #fff;
+  }
+}
+.btnSampleSmall {
+  padding: 0.9rem 3rem;
+  width: 13rem;
+  line-height: 2.7rem;
+  font-size: 1.4rem;
+  border-radius: 5rem;
+}
+.btnSampleLarge {
+  padding: 0.9rem 5.8rem;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+}
