@@ -156,6 +156,10 @@
   border-radius: 50%;
   background: $priColor;
   font-size: 1.2rem;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    animation: bounce 1.5s ease-in-out infinite;
+  }
 }
 // header navigation
 .sideMenuHolder {
@@ -251,5 +255,16 @@
     font-size: 1.4rem;
     font-weight: 400;
     padding: 1rem 0;
+  }
+}
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-0.7rem);
+  }
+  100% {
+      transform: translateY(0);
   }
 }

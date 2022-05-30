@@ -226,50 +226,53 @@
     text-decoration: line-through;
   }
 }
-.countBox {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  gap: 1rem;
-  &Item {
+.countDown {
+  .countBox {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
     justify-content: center;
-    align-items: center;
-    .count {
-      height: 4rem;
-      padding: 0 0.7rem;
-      background: $gray1 !important;
-      line-height: 4rem;
-      font-size: 3rem;
+    gap: 1rem;
+    &Item {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      .count {
+        height: 4rem;
+        padding: 0 0.7rem;
+        background: $gray1 !important;
+        line-height: 4rem;
+        font-size: 3rem;
+        font-weight: 500;
+      }
+      .label {
+        font-size: 1.2ren;
+        text-transform: uppercase;
+      }
+    }
+    .split {
+      display: block;
+      font-size: 2.6rem;
       font-weight: 500;
     }
-    .label {
-      font-size: 1.2ren;
-      text-transform: uppercase;
-    }
-  }
-  .split {
-    display: block;
-    font-size: 2.6rem;
-    font-weight: 500;
   }
 }
 // home categories
+.productVendor {
+  margin-bottom: 0.7rem;
+  a {
+    font-weight: 300;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      color: $priColor;
+    }
+  }
+}
 .hProductWrapper {
   position: relative;
   padding: 0.5rem 1rem;
   overflow: hidden;
-  .productVendor {
-    margin-bottom: 0.7rem;
-    a {
-      font-weight: 300;
-      transition: 0.3s ease-in-out;
-      &:hover {
-        color: $priColor;
-      }
-    }
-  }
+
   .priceCartWrapper {
     display: flex;
     justify-content: space-between;

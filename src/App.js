@@ -4,6 +4,7 @@ import Home from "./screens/Home";
 import Product from "./screens/Product";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import Detail from "./screens/Detail";
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +13,8 @@ function App() {
         <Route path="/collections/all" element={<Product />} />
         <Route path="/account/login" element={<Login />} />
         <Route path="/account/register" element={<Register />} />
+        <Route path="/detail" element={<Detail />} />
+
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,92 @@
+@import "./components/variables/Variables.scss";
+// detail product
+.detailWrapper {
+    .productVendor {
+        a {
+            font-size: 1.2rem;
+        }
+    }
+    .detailName {
+        font-size: 2.5rem;
+    }
+    .ratingLink {
+        margin-bottom: 1.2rem;
+        line-height: 2rem;
+        .ratingInner {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            .looxRating {
+                path {
+                    fill: $priColor;
+                }
+            }
+            a {
+                color: $gray;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                    color: $priColor;
+                }
+            }
+        }
+    }
+    .socialSharing {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid $borderColor;
+        .socialList {
+            display: flex;
+            gap: 1rem;
+            padding: 0;
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0 0.8rem;
+                transition: 0.3s ease-in-out;
+                line-height: 2.8rem;
+                color: #fff;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+            li:nth-of-type(1) a {
+                background: #3b5998;
+            }
+            li:nth-of-type(2) a {
+                background:  #1da1f2;
+            }
+        }
+    }
+    .shortDescription {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid $borderColor;
+        ul {
+            margin-top: 1.5rem;
+            list-style: disc;
+            color: $gray;
+        }
+    }
+    .productSkuCollection {
+        margin-top: 1.5rem;
+        list-style: disc;
+        color: $gray;
+        a {
+            color: $gray;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                color: $priColor;
+            }
+        }
+    }
+    .peopleInCart {
+        display: flex;
+        margin-bottom: 1.5rem;
+        gap: 1rem;
+        .imgCart {
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+    }
+}

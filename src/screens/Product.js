@@ -45,7 +45,7 @@ export default function Product() {
               <BreadcrumbItem>
                 <Link to="/">Home</Link>
               </BreadcrumbItem>
-              <BreadcrumbItem active>Library</BreadcrumbItem>
+              <BreadcrumbItem active>Products</BreadcrumbItem>
             </Breadcrumb>
           </Container>
         </div>
