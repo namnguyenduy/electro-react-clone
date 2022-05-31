@@ -1,11 +1,23 @@
 import React from "react";
-import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Breadcrumb,
+  BreadcrumbItem,
+  Form,
+  Input,
+  Label,
+  Button,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import CountdownTimer from "react-component-countdown-timer";
 // import icon
+import { BiGitCompare } from "react-icons/bi";
+import { RiHeartLine } from "react-icons/ri";
 import { AiFillStar } from "react-icons/ai";
-import { FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaCartArrowDown } from "react-icons/fa";
 // import my component
 import Header from "../components/header/Header";
 import Partner from "../components/partner/Partner";
@@ -125,8 +137,8 @@ export default function Detail() {
                     <img src={require("../assets/images/inCart.webp")} alt="" />
                   </div>
                   <div className="peopleText">
-                    <strong>Other people want this. </strong>3 people have this in
-                    their carts right now.
+                    <strong>Other people want this. </strong>3 people have this
+                    in their carts right now.
                   </div>
                 </div>
                 {/*  */}
@@ -137,8 +149,95 @@ export default function Detail() {
                   </div>
                   <div className="deadline">
                     <span>Order within</span>
-                    <CountdownTimer count= {68321} hideDay showTitle noPoints/>
+                    <CountdownTimer count={68321} hideDay showTitle noPoints />
                   </div>
+                </div>
+              </Col>
+              {/* product info */}
+              <Col lg="3">
+                <div className="productInfo">
+                  <div className="productInfoInner">
+                    {/* stock */}
+                    <div id="stock">
+                      <span>Available:</span>
+                      <span className="stock"> In Stock</span>
+                    </div>
+                  </div>
+                  {/* price */}
+                  <div className="productPrice">
+                    <span className="priceCompare">$64400</span>
+                    <span className="priceSale">$45100</span>
+                  </div>
+                  <Form className="productForm">
+                    <div className="quantityProduct">
+                      {/* quantity */}
+                      <label>Quantity</label>
+                      <div className="quantity">
+                        <Input
+                          type="number"
+                          className="quantityItem"
+                          value={1}
+                        />
+                        <div className="quantityWrapper">
+                          <span className="qtyUp" title="Increase">
+                            +
+                          </span>
+                          <span className="qtyDown" title="Decrease">
+                            -
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="productAction">
+                      {/* size */}
+                      <div className="productSize">
+                        <label>Size</label>
+                        <div className="sizeItem">
+                          <input
+                            type="radio"
+                            id="M"
+                            name="size"
+                            value={"M"}
+                            checked
+                          />
+                          <label for="M">M</label>
+                        </div>
+                        <div className="sizeItem">
+                          <input type="radio" id="L" name="size" value={"L"} />
+                          <label for="L">L</label>
+                        </div>
+                        <div className="sizeItem">
+                          <input
+                            type="radio"
+                            id="XL"
+                            name="size"
+                            value={"XL"}
+                          />
+                          <label for="XL">XL</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="actionButton">
+                      <Button
+                        className={clsx(
+                          "btnSample",
+                          "addToCart",
+                          "btnSampleLarge"
+                        )}
+                      >
+                        <FaCartArrowDown />
+                        Add to cart
+                      </Button>
+                    </div>
+                    <div className="addToWishlist">
+                      <RiHeartLine />
+                      <span>Wishlist</span>
+                    </div>
+                    <div className="addToCompare">
+                      <BiGitCompare />
+                      <span>Compare</span>
+                    </div>
+                  </Form>
                 </div>
               </Col>
             </Row>

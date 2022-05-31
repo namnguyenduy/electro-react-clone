@@ -89,4 +89,29 @@
             animation: bounce 1.5s ease-in-out infinite;
         }
     }
+    .deliveryTime {
+        margin-bottom: 0.5rem;
+    }
+    .deadline {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        .countBox {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 1rem;
+            &Item {
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 0.5rem;
+                align-items: center;
+                .label, .count {
+                    font-size: 1.8rem;
+                    color: $priColor !important;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }
